@@ -1,0 +1,45 @@
+@page  {
+    size: auto;
+    margin: 5mm;
+}
+
+body{
+    margin: 0;
+}
+
+/*
+Article eredita il colore perchè segue le indicazioni di
+container. è ereditabile.
+se Article non fosse dentro Container dovremmo fare:
+:root{
+-webkit-print-color-adjust: exact;
+}
+*, ::after, ::before{
+-webkit-print-color-adjust: inherit;
+}
+ */
+
+/*
+le regole qui sopra servono per togliere
+l'header e il footer predefiniti dalla stampante
+cioè le parole piccole che escono in alto e in basso
+ottimo per i CV
+ */
+
+div .title > h1{
+    color: mediumspringgreen;
+}
+
+/* in questo caso SOLO quando si stampa il titolo diventa verde.
+motivo 1) perchè ho aggiunto div ( lasciavo .title > h1 come nel foglio
+html  "vinceva il rosso").
+motivo 2) perchè nel foglio html c'è media="print",
+che si usa quando si deve stampare.
+mentre media="screen" per gli schermi.
+ */
+
+.container{
+    background: linear-gradient(coral, navajowhite);
+    -webkit-print-color-adjust: exact;
+}
+

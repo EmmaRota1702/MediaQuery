@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Media Query</title>
+    <link rel="stylesheet" href="print.css" media="print">
+    <style>
+        .title > h1{
+            color: red;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            margin: .2em 0;
+        }
+
+        article{
+            background-color: darksalmon;
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 767px){
+            .title > h1{
+                font-size: 2.25rem;
+                color: yellow;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px){
+            .title > h1{
+                font-size: 2.25rem;
+                color: blue;
+            }
+        }
+        /*
+        ricordarsi gli estrmi per non far sovrapporre le regole
+        quindi finisco con 767 e riparto con 768 per esempio
+         */
+
+       /* @media(max-width: 560px) {
+            .title > h1{
+                font-size: 2.25rem;
+            }
+        }
+        */
+
+       /* @media print {
+            per il print
+        } */
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="title">
+        <h1>This is the main title</h1>
+    </div>
+    <article>
+        <h1>Title</h1>
+    </article>
+    <p>Text...</p>
+</div>
+</body>
+</html>
